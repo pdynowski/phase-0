@@ -35,3 +35,13 @@ A shell is a program in Unix that acts as the user interface - it's where you la
 *help - when used without a command (just 'help'), it will provide a list of commands that the shell will accept; if used with a command ('help cd'), it will provide a description of what the command does, and the arguments that can be used with the command
 
 # 1.4 Forking and Cloning Reflection
+
+Create a repository: on GitHub, click on the green "New repository" button near the top-right of the home screen. On the page that comes up, fill out the repository name, select a license if necessary, and click on the "Create Repository" button. Voila, new repository on GitHub. Locally, use "git init <repository_name>" to create a new git repository.
+
+Fork a repository: find the repository you want to fork on GitHub (generally, this will be easiest if you know the user you want to clone from, and the name of the repository -  you can then just go to http://github.com/user/repository. Click on the grey "Fork" button near the top right of the screen, and select the user you wold like to have fork the repository.
+
+Clone a repo: again, it's simplest to have the specific web address for the repo, which can be gotten from the GitHub page for the repo - labelled HTTPS clone URL near the bottom of the repo page. (Again, it will be of the form https://github.com/username/reponame (Links to an external site.)); then use the git clone command on the command line to clone the repo to your local box.
+
+You would fork a repository as opposed to creating a new one so that you would be working from a local version of a project that already contains all the necessary files - no need to start completely from scratch.
+
+I didn't have any real trouble setting up git or GitHub, alhtough I'm sure I probably missed something that will make my life difficult in the future. Making sure that git talked to GitHub was probably the most difficult thing, and that was fairly straightforward.
