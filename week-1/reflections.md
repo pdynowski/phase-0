@@ -45,3 +45,5 @@ Clone a repo: again, it's simplest to have the specific web address for the repo
 You would fork a repository as opposed to creating a new one so that you would be working from a local version of a project that already contains all the necessary files - no need to start completely from scratch.
 
 I didn't have any real trouble setting up git or GitHub, alhtough I'm sure I probably missed something that will make my life difficult in the future. Making sure that git talked to GitHub was probably the most difficult thing, and that was fairly straightforward.
+
+
