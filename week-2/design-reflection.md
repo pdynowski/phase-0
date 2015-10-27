@@ -1,6 +1,7 @@
 ![Site Map](/week-2/imgs/site-map.png)
 
 > What are the 6 phases of web design?
+
 1. Information gathering - determining why the site is being made, who the intended users are, and what content should be included on the site
 2. Planning - development of the site map and determination of which, if any, technologies to implement
 3. Design - creating the look and feel of a website; usually involves wireframing the pages of the site. An iterative, collaborative process between designer and client
