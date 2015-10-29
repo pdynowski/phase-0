@@ -1,5 +1,8 @@
+Wireframe layout for basic homepage:
 ![Wireframe for index page](imgs/wireframe-index.png)
-![Wireframe for blog index page](imgs/wireframe-blog-index.jpg)
+
+Wireframe layout for blog page:
+![Wireframe for blog index page](imgs/wireframe-blog-index.png)
 
 > What is a wireframe?
 
