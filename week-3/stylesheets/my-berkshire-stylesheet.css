@@ -1,0 +1,109 @@
+body {
+    color: #000080;
+    background-color: #ffffff;
+}
+a {
+    color: #800080;
+    font-size: 16px;
+}
+a:visited {
+    color: #ff0000;
+    font-size: 16px;
+}
+li:nth-child(even) {
+    float: right;
+    text-align: left;
+    width: 50%;
+}
+li:nth-child(odd) {
+    float: left;
+    text-align: left;
+    width: 50%;
+}
+footer {
+    clear: both;
+    text-align: left;
+    border-top: 1px solid black;
+    font-size: 12px;
+}
+section {
+    font-size: 12px;
+    border-top: 1px solid #000000;
+}
+.hr {
+    border-top: 1px solid #000000
+}
+footer div {
+    margin: auto;
+    text-align: center;
+    width: 550px;
+}
+footer a {
+    font-size: 12px;
+}
+header {
+    font-weight: bold;
+    font-size: 1em;
+    text-align: center;
+    width: 300px;
+    margin: auto;
+}
+header h1 {
+    font-size: 1em;
+}
+header span {
+    font-size: 2em;
+}
+#address {
+    font-size: .75em;
+    width: 150px;
+    margin: auto;
+}
+footer span {
+    font-weight: bold;
+}
+
+/* 
+> What is important to know when linking an external file 
+(like a stylesheet) to an HTML file?
+
+When linking an external file to an HTML file, it is 
+important to know the path between the HTML file and the 
+external file. It is also important to know the syntax 
+required to link the files.
+
+> What tricks did you use to help you with positioning? 
+How hard was it to get the site as you wanted?
+
+There was a fair amount of margin:auto, float: side, and 
+text-align: center used to position items; it was more 
+difficult to get the list items as we wanted than it was 
+to position most of the other text or graphics. The 
+odd restriction on using <hr> also presented some 
+difficulty.
+
+> What CSS did you use to modify the element style (like 
+size, color, etc.)
+
+font-size, color, font-style, font-weight.
+
+> Did you modify the HTML to include classes or IDs? If so,
+which did you choose and why? If you didn't, how would you 
+know which one to add to your HTML?
+
+We added both to the HTML. We used IDs where there was a 
+single, specific change that needed to be made. We used 
+class when there was a single kind of change that needed to 
+be made in several places.
+
+> When you compared your site to the actual code base, which 
+do you think had cleaner code that followed best practices 
+and why?
+
+I think that we had much cleaner code, that more closely 
+followed best practices. Mostly, this was probably due to 
+the fact that Berkshire's code probably hasn't been changed 
+since it was originally written in 1990-whatever, probably 
+before CSS was a thing. Their way was certainly generally 
+seemed to be much simpler, though.
+*/
