@@ -1,3 +1,8 @@
+[4.2.1 Defining Variables](https://github.com/pdynowski/phase-0/blob/master/week-4/defining-variables.rb)
+[4.2.2 Simple String](https://github.com/pdynowski/phase-0/blob/master/week-4/simple-string.rb)
+[4.2.3 Basic Math](https://github.com/pdynowski/phase-0/blob/master/week-4/basic-math.rb)
+
+
 > What does ```puts``` do?
 
 ```puts``` is one of the ruby methods used to display the results of evaluating code (along with ```prints``` and ```p```). ```Puts``` prints the results to the console along with a newline character - so, the output from each run of it will be printed on a new line. In contrast, ```prints``` doesn't add a newline character, so all output will be printed on a single line. Both of these methods return 'nil'; the third method, ```p```, returns the evaluated code, as well as printing the output to the screen along the line of ```puts```.
