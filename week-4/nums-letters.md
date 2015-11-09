@@ -1,5 +1,7 @@
 [4.2.1 Defining Variables](https://github.com/pdynowski/phase-0/blob/master/week-4/defining-variables.rb)
+
 [4.2.2 Simple String](https://github.com/pdynowski/phase-0/blob/master/week-4/simple-string.rb)
+
 [4.2.3 Basic Math](https://github.com/pdynowski/phase-0/blob/master/week-4/basic-math.rb)
 
 
@@ -28,3 +30,28 @@ puts "There are #{hours} hours in a year."
 minutes = 60 * 24 * 365 * 10
 puts "There are #{minutes} minutes in a decade."
 ```
+
+> How does Ruby handle addition, subtraction, multiplication, and division of numbers?
+
+I'm...not really sure what this question wants. It handles them by doing them, using standard mathematical symbols (+, -, *, /, respectively). One tricky bit comes up with division - there's an important difference between integer and float division, discussed below.
+
+> What is the difference between integers and floats?
+
+Integers are numbers without decimals (eg, 4, 5, etc). Floats (short for floating-point decimals) are numbers that include decimals (eg, 4.0 , 3.14159, etc).
+
+> What is the difference between integer and float division?
+
+Float division works as you'd expect division to work - it returns the calculated value of the division, including decimal (eg, 9.0/2.0 = 4.5). Integer division is a little trickier - it returns only the whole number of times the divisor goes into the dividend, ignoring any extra decimal component (eg, 9/2 = 4).
+
+
+> What are strings? Why and when would you use them?
+
+Strings are groups of letters (more correctly, characters) within a program. Generally, they're indicated by quotation marks. You'd use them to keep track of non-numerical information (Names, cities, addresses, etc).
+
+> What are local variables? Why and when would you use them?
+
+A local variable is basically a holder that is assigned a value, which can be changed at any time by reassigning (eg, num1 = 4). You'd use them any time you need to access the same value multiple times, or if you'd like access to intermediate steps in a calculation.
+
+> How was this challenge? Did you get a good review of some of the basics?
+
+Definitely a good review of some of the basics, plus a good overview of some little differences between Ruby and other languages I've used.
