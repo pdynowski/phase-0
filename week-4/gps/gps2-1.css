@@ -1,3 +1,29 @@
-html {
-	background-color: blue;
+body {
+    color: #061539;
+    background-color: #7887ab;
+    font-family: Verdana, sans-serif;
+}
+
+a {
+    color: #6b088c;
+    text-decoration: none;
+}
+
+header {
+}
+
+.column-1 {
+    float:left;
+    width: 45%
+}
+
+.column-2 {
+    float:right;
+    width: 45%
+}
+
+footer {
+    padding-top: 2em;
+    clear:both;
+    text-align: center;
 }
