@@ -1,6 +1,6 @@
 # Factorial
 
-# I worked on this challenge with: Mo.
+# I worked on this challenge with: Mohammad Amin.
 
 
 # Your Solution Below
