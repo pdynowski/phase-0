@@ -19,7 +19,9 @@
 
 class Die
   def initialize(sides)
-    # code goes here
+    unless sides >=1
+      raise ArgumentError.new("Number of sides needs to be at least one")
+    end
   end
 
   def sides
