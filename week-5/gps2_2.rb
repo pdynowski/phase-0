@@ -70,8 +70,7 @@ end
 # Method to print a list and make it look pretty
 # input: list
 # steps: loop over list [item: qty, newline] for each item
-# output: string of items and quantities
-
+# output: prints grocery list, returns nil
 def print_list(list)
   grocery_list = "Grocery List" + "\n"
   
@@ -99,7 +98,7 @@ list = remove_item(list, "ice cream")
 # p list 
 
  print_list(list)
-
+ p print_list(list)
 
 
  # What did you learn about pseudocode from working on this challenge?
