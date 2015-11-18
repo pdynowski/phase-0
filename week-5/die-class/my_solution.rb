@@ -1,8 +1,8 @@
 # Die Class 1: Numeric
 
-# I worked on this challenge [by myself, with: ]
+# I worked on this challenge by myself.
 
-# I spent [] hours on this challenge.
+# I spent 0.5 hours on this challenge.
 
 # 0. Pseudocode
 
@@ -22,14 +22,15 @@ class Die
     unless sides >=1
       raise ArgumentError.new("Number of sides needs to be at least one")
     end
+    @sides = sides
   end
 
   def sides
-    # code goes here
+    @sides
   end
 
   def roll
-    # code goes here
+    return Random.new.rand(@sides) + 1
   end
 end
 
@@ -37,7 +38,7 @@ end
 
 # 3. Refactored Solution
 
-
+#I'm going to be honest, here - I'm not sure what there is for me to refactor in my initial solution. If I'm incorrect about that, please let me know.
 
 
 
