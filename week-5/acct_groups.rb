@@ -40,7 +40,7 @@ def assign_groups(list)
 
 	leftovers = list.length % group_size
 
-	if list.length <= group_size
+	if list.length < group_size
 		group_size_array.push(list.length)
 	else
 		unless leftovers == 0
@@ -62,6 +62,16 @@ def assign_groups(list)
 	end
 
 	print group_size_array
+
+	group_size_array.each do |size| 
+		temp_array = []
+		(1..size).each do |i|
+			temp_array.push(list.shift)
+		end
+		group_assignment_array.push(temp_array)
+	end
+
+	# print group_assignment_array
 
 end
 
