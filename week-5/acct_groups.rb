@@ -28,3 +28,43 @@
 		# array
 
 # RETURN array of accountability groups
+
+def assign_groups(list)
+	
+	group_size = 4
+
+	group_assignment_array = []
+
+	initial_group_number = list.length/group_size
+	group_size_array = Array.new(initial_group_number, group_size)
+
+	leftovers = list.length % group_size
+
+	if list.length <= group_size
+		group_size_array.push(list.length)
+	else
+		unless leftovers == 0
+			if leftovers <= initial_group_number
+				begin
+					group_size_array[leftovers-1] += 1
+					leftovers -= 1
+				end until leftovers == 0
+			else
+				if leftovers < 3
+					begin
+						group_size_array[2-leftovers] -= 1
+						leftovers += 1
+					end	until leftovers == 3
+				end
+				group_size_array.push(3)
+			end
+		end
+	end
+
+	print group_size_array
+
+end
+
+for i in 1..20
+	assign_groups(Array.new(i))
+end
