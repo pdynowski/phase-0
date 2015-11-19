@@ -19,17 +19,29 @@ def my_hash_finding_method(source, thing_to_find)
 end
 
 # Identify and describe the Ruby method(s) you implemented.
-#
-#
-#
+
+# I implemented Array#select, Hash#select, Object#to_s, String#include? and
+# Hash#keys. Array#select and Hash#select operate similarly, iterating over
+# all values in the collection and returning those that met the test set
+# within the select block. Hash#keys was required because Hash#select returns
+# the full hash entries that met the condition, while we only wanted to see
+# the keys of that set. Object#to_s was necessary to ensure that everything
+# from the source was a String, and thus had the String#include? method
+# available. String#include tests a given string to see if a given substring
+# exists within it.
 
 # Person 2
 def my_array_modification_method!(source, thing_to_modify)
-  source.dup # This line is here to make sure all tests initially fail. Delete it when you begin coding.
+  source.map!{ |item|
+    item += 1 if item.is_a?(Integer)
+    item
+  }
 end
 
 def my_hash_modification_method!(source, thing_to_modify)
-  source.dup # This line is here to make sure all tests initially fail. Delete it when you begin coding.
+  source.each_key do |pet|
+    source[pet] += 2
+  end
 end
 
 # Identify and describe the Ruby method(s) you implemented.
