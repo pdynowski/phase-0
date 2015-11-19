@@ -45,39 +45,57 @@ def my_hash_modification_method!(source, thing_to_modify)
 end
 
 # Identify and describe the Ruby method(s) you implemented.
-#
-#
-#
+
+# Array#map, Hash#each_key, Hash#[key], Object#is_a? were used. Array#map
+# allows you to iterate over an array and apply a function to each item in the
+# array. Object#is_a? was used to test the objects from the array, and add one
+# to them if they were integers. Hash#each_key allowed me to iterate over the
+# keyset of the hash, and Hash#[key] allowed me to access and update the
+# values in the hash.
+
 
 
 # Person 3
 def my_array_sorting_method(source)
-  source # This line is here to make sure all tests initially fail. Delete it when you begin coding.
+  source.sort_by { |item| 
+    item.to_s
+  }
 end
 
 def my_hash_sorting_method(source)
-   source # This line is here to make sure all tests initially fail. Delete it when you begin coding.
+  source.sort_by { |key, value|
+    value
+  } 
 end
 
 # Identify and describe the Ruby method(s) you implemented.
-#
-#
-#
 
+# Enumerable#sort_by for both; Object#to_s for the array was required to turn
+# everything in the array to strings so that they could all be compared to
+# each other. Enumerable#sort_by allows you to define the value or method that
+# you wish to sort the collection by; string values in the case of the array,
+# pet ages in the case of the hash.
 
 # Person 4
 def my_array_deletion_method!(source, thing_to_delete)
-  source.dup # This line is here to make sure all tests initially fail. Delete it when you begin coding.
+  source.reject!{ |item|
+    item.to_s.include?(thing_to_delete)
+  }
 end
 
 def my_hash_deletion_method!(source, thing_to_delete)
-  source.dup # This line is here to make sure all tests initially fail. Delete it when you begin coding.
+  source.delete(thing_to_delete) 
+  source
 end
 
 # Identify and describe the Ruby method(s) you implemented.
-#
-#
-#
+
+# Array#reject! - destructively creates array of all members of original array
+# that do not meet a specified condition. Object#to_s turned all of the
+# elements of the array into strings, so the String#include method could be
+# run to check for which elements to reject. Hash#delete was used to delete
+# the selected key/value pair from the hash.
+
 
 
 # Person 5
