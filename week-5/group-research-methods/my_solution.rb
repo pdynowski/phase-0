@@ -113,7 +113,10 @@ end
 
 # Identify and describe the Ruby method(s) you implemented.
 
-# The new method for this exercise was the Enumerable#partition method, which splits a collection into two arrays based on which members of the collection meet the criteria of the test and which do not - basically, it's like running a select and reject at the same time.
+# The new method for this exercise was the Enumerable#partition method, which
+# splits a collection into two arrays based on which members of the collection
+# meet the criteria of the test and which do not - basically, it's like
+# running a select and reject at the same time.
 
 
 
