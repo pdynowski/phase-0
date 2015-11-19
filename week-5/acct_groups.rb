@@ -11,71 +11,71 @@
 # Create array that will contain arrays of group members
 
 # Assume 4-person groups to start
-	# Calculate number of full four-person groups (integer division, list
-	# length/4) 
-	# Caculate number of extra people after dividing into as many
-	# 4-person groups as possible (list length % 4)
-	# IF number of extra people <= number of groups of 4
-		# THEN change that number of groups of 4 to groups of 5 starting with the
-		# group in cell 0 and counting up to cell (extra - 1)
-	# ELSE IF number of extra people < 3
-		# THEN change (3-extra) groups of 4 to groups of 3 to create another group
-		# of 3 starting at group in cell (2-extra) and counting down to 0
-	# ELSE leave final group as group of 3
+  # Calculate number of full four-person groups (integer division, list
+  # length/4) 
+  # Caculate number of extra people after dividing into as many
+  # 4-person groups as possible (list length % 4)
+  # IF number of extra people <= number of groups of 4
+    # THEN change that number of groups of 4 to groups of 5 starting with the
+    # group in cell 0 and counting up to cell (extra - 1)
+  # ELSE IF number of extra people < 3
+    # THEN change (3-extra) groups of 4 to groups of 3 to create another group
+    # of 3 starting at group in cell (2-extra) and counting down to 0
+  # ELSE leave final group as group of 3
 
 # Assign names to groups
-	# ITERATE over array containing size of groups
-		# FOR EACH iteration, assign first size names from main list to group
-		# array, removing them from main list
+  # ITERATE over array containing size of groups
+    # FOR EACH iteration, assign first size names from main list to group
+    # array, removing them from main list
 
 # RETURN array of accountability groups
 
 ######## INITIAL SOLUTION
 
 # def assign_groups(list)
-	
-# 	group_size = 4
+  
+#   group_size = 4
 
-# 	group_assignment_array = []
+#   group_assignment_array = []
 
-# 	initial_group_number = list.length/group_size
-# 	group_size_array = Array.new(initial_group_number, group_size)
+#   initial_group_number = list.length/group_size
+#   group_size_array = Array.new(initial_group_number, group_size)
 
-# 	leftovers = list.length % group_size
+#   leftovers = list.length % group_size
 
-# 	if list.length < group_size
-# 		group_size_array.push(list.length)
-# 	else
-# 		unless leftovers == 0
-# 			if leftovers <= initial_group_number
-# 				begin
-# 					group_size_array[leftovers-1] += 1
-# 					leftovers -= 1
-# 				end until leftovers == 0
-# 			else
-# 				if leftovers < 3
-# 					begin
-# 						group_size_array[2-leftovers] -= 1
-# 						leftovers += 1
-# 					end	until leftovers == 3
-# 				end
-# 				group_size_array.push(3)
-# 			end
-# 		end
-# 	end
+#   if list.length < group_size
+#     group_size_array.push(list.length)
+#   else
+#     unless leftovers == 0
+#       if leftovers <= initial_group_number
+#         begin
+#           group_size_array[leftovers-1] += 1
+#           leftovers -= 1
+#         end until leftovers == 0
+#       else
+#         if leftovers < 3
+#           begin
+#             group_size_array[2-leftovers] -= 1
+#             leftovers += 1
+#           end until leftovers == 3
+#         end
+#         group_size_array.push(3)
+#       end
+#     end
+#   end
 
-# 	# print group_size_array
+#   # print group_size_array
 
-# 	group_size_array.each do |size| 
-# 		temp_array = []
-# 		(1..size).each do |i|
-# 			temp_array.push(list.shift)
-# 		end
-# 		group_assignment_array.push(temp_array)
-# 	end
+#   group_size_array.each do |size| 
+#     temp_array = []
+#     (1..size).each do |i|
+#       temp_array.push(list.shift)
+#     end
+#     group_assignment_array.push(temp_array)
+#   end
 
-# 	# print group_assignment_array
-# 	group_assignment_array
+#   # print group_assignment_array
+#   group_assignment_array
 # end
 
 ######## END INITIAL SOLUTION
@@ -102,37 +102,37 @@
 ######## conditionals, so if the reviewer has any tips, please share...
 
 def assign_groups(list)
-	
-	group_size = 4
+  
+  group_size = 4
 
-	list_clone = list.clone.shuffle!
-	initial_group_number = list_clone.length/group_size
-	group_size_array = Array.new(initial_group_number, group_size)
+  list_clone = list.clone.shuffle!
+  initial_group_number = list_clone.length/group_size
+  group_size_array = Array.new(initial_group_number, group_size)
 
-	leftovers = list_clone.length % group_size
+  leftovers = list_clone.length % group_size
 
-	if list_clone.length < group_size
-		group_size_array.push(list_clone.length)
-	else
-		unless leftovers == 0
-			if leftovers <= initial_group_number
-				begin
-					group_size_array[leftovers-1] += 1
-					leftovers -= 1
-				end until leftovers == 0
-			else
-				while leftovers < 3 do
-					group_size_array[2-leftovers] -= 1
-					leftovers += 1
-				end
-				group_size_array.push(3)
-			end
-		end
-	end
+  if list_clone.length < group_size
+    group_size_array.push(list_clone.length)
+  else
+    unless leftovers == 0
+      if leftovers <= initial_group_number
+        begin
+          group_size_array[leftovers-1] += 1
+          leftovers -= 1
+        end until leftovers == 0
+      else
+        while leftovers < 3 do
+          group_size_array[2-leftovers] -= 1
+          leftovers += 1
+        end
+        group_size_array.push(3)
+      end
+    end
+  end
 
-	group_size_array.map{ |size|
-		list_clone.shift(size)
-	}
+  group_size_array.map{ |size|
+    list_clone.shift(size)
+  }
 
 end
 
@@ -140,7 +140,7 @@ end
 ######## DRIVER CODE
 name_array = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t"]
 for i in 1..20
-	p assign_groups(name_array.slice(0,i))
+  p assign_groups(name_array.slice(0,i))
 end
 p name_array
 
@@ -188,4 +188,4 @@ p name_array
 # I learned that it appears to be much easier to refactor iterative loops than
 # it is to refactor conditional statements. I didn't learn any new methods,
 # but I got some more practice with mapping and shifting. Also, I found a nice
-# resource to help with refactoring at http://ghendry.net/refactor.html
+# resource to help with refactoring at http://ghendry.net/refactor.html 
