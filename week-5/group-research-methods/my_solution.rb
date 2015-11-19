@@ -100,20 +100,24 @@ end
 
 # Person 5
 def my_array_splitting_method(source)
-  source # This line is here to make sure all tests initially fail. Delete it when you begin coding.
+  source.partition { |item|
+    item.is_a?(Integer)
+  }
 end
 
 def my_hash_splitting_method(source, age)
-  source # This line is here to make sure all tests initially fail. Delete it when you begin coding.
+  source.partition { |pet, age|
+    age <= 4
+  }
 end
 
 # Identify and describe the Ruby method(s) you implemented.
-#
-#
-#
+
+# The new method for this exercise was the Enumerable#partition method, which splits a collection into two arrays based on which members of the collection meet the criteria of the test and which do not - basically, it's like running a select and reject at the same time.
 
 
-# Release 1: Identify and describe the Ruby method you implemented. Teach your
+
+# Release 2: Identify and describe the Ruby method you implemented. Teach your
 # accountability group how to use the methods.
 #
 #
