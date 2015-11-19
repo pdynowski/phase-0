@@ -119,14 +119,25 @@ end
 
 # Release 2: Identify and describe the Ruby method you implemented. Teach your
 # accountability group how to use the methods.
-#
-#
-#
+
+# For the assignment, I implemented Person 1's methods -
+# my_array_finding_method and my_hash_finding_method. The important Enumerable
+# method in each method that I wrote was Enumerable#select - which allows you
+# to set a condition in it's block, and only pick the items from the initial
+# collection that meet that condition. So, in the case of
+# my_array_finding_method, the condition that was set was that the object read
+# in from the array contained a "t". So, each item that was read in from the
+# array first had to be converted to a string, so that the String#include?
+# method would work. Select then returned an array containing all the array
+# items for which item.include?("t") evaluated to true. Similarly, the hash
+# was run through a selector to match the age of pets and return the key/value
+# pair.
+
 
 
 # Release 3: Reflect!
 # What did you learn about researching and explaining your research to others?
 #
-#
-#
-#
+# Reflection, it appears, is saved for 5.4.2 this time, so my reflections will
+# mostly be over there. My only comment here is, damn, is it easy for me to
+# spend forever reading Ruby docs.
