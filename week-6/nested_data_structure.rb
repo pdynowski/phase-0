@@ -85,7 +85,37 @@ end
 startup_names.map! do |word|
   add_ly(word) 
 end
-
-
   
 p startup_names
+
+
+=begin
+  
+What are some general rules you can apply to nested arrays?
+
+General rule: nested arrays are a pain in the butt. When working with them,
+it's necessary to always keep in mind what the specific object your iterator
+element is dealing with is - am I working with a number, a string, an array?
+Basically, the best rule is the same as always - be mindful of what you and
+your code are doing.
+
+What are some good ways you can iterate over nested arrays?
+
+Enumerable methods - methods built on the .each method - are generally the
+best ways to iterate over nested arrays. Note, though, that it will be
+required that you test to check if each iterator element is an array in order
+to see if you need to iterate over that element separately. Tl;dr: iterators
+within iterators.
+
+
+Did you find any good new methods to implement or did you re-use one you were
+already familiar with? What was it and why did you decide that was a good
+option?
+
+We reused the map! function; we decided map! was best because we were
+performing the same operation on all the elements of the arrays, which is what
+map is designed for. We chose the destructive version because the problem
+definition told us to modify the given array, implying that the original
+should be changed.
+
+=end
