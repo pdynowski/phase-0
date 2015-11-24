@@ -127,7 +127,10 @@ conditions, and work as follows:
     evaluate this              ## otherwise this code will be run
   end
 
-A case statement, on the other hand, is generally better when you're repeatedly checking the value of a single variable, and it may take any of a large range of values, each of which could require you to execute different code. Case/when example:
+A case statement, on the other hand, is generally better when you're
+repeatedly checking the value of a single variable, and it may take any of a
+large range of values, each of which could require you to execute different
+code. Case/when example:
 
   case variable
   when 0              ## if variable == 0, perform code on next line
@@ -149,7 +152,13 @@ to do things multiple ways.
 Why do you think this code requires you to return symbols? What are the
 benefits of using symbols?
 
-I think that this code requires us to use symbols mainly so that we get some practice working with them. Symbols are immutable (meaning they can only be overwritten, not ever changed), which apparently means that they can offer considerable memory savings over literal strings, and are much easier to compare - every :abc equals every other :abc - they all refer to the same spot in memory, while every string "abc" does not necessarily equal every other "abc", so they need to be compared character by character.
+I think that this code requires us to use symbols mainly so that we get some
+practice working with them. Symbols are immutable (meaning they can only be
+overwritten, not ever changed), which apparently means that they can offer
+considerable memory savings over literal strings, and are much easier to
+compare - every :abc equals every other :abc - they all refer to the same spot
+in memory, while every string "abc" does not necessarily equal every other
+"abc", so they need to be compared character by character.
 
 
 =end
