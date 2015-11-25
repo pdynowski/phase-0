@@ -128,13 +128,65 @@ board = [[47, 44, 71, 8, 88],
         [25, 31, 96, 68, 51],
         [75, 70, 54, 80, 83]]
 
-new_game = BingoBoard.new()
+new_game = BingoBoard.new(board)
 # new_game.display_board
 # new_game.call
 # new_game.check
 # new_game.display_board
-a = new_game.create_board
 new_game.display_board
 
 #Reflection
 
+=begin
+
+How difficult was pseudocoding this challenge? What do you think of your
+pseudocoding style?
+
+I didn't find the pseudocoding difficult for this challenge. I think my style
+is pretty solid - I've got small steps down, pretty much. My formatting,
+possibly, could be better.
+
+What are the benefits of using a class for this challenge?
+
+Using a class is beneficial for this challenge because there are many methods
+that depend on persistent values from other methods (ie, instance variables).
+It's extremely useful to be able to pass an instance variable containing the
+bingo board to the methods that check the board for a value and print the
+board out.
+
+
+How can you access coordinates in a nested array?
+
+You can access coordinates in a nested array by sequentially indicating the
+indices you'd like to access - for instance, in our 5x5 array, we can access
+the center value directly with array[2][2].
+
+What methods did you use to access and modify the array?
+
+I found a simple .each to be the most useful thing to use for finding values
+and printing the board. I used some other methods to create the actual bingo
+board - array creation from range, shuffle, and slice.
+
+Give an example of a new method you learned while reviewing the Ruby docs.
+Based on what you see in the docs, what purpose does it serve, and how is it
+called?
+
+The new methods I learned/used while reviewing the docs, mostly, were used to
+create new arrays. I hadn't created an array with the %w() method previously,
+nor had I created one using the Array(Range) methods. Both provide ways to
+initialize arrays without strictly defining every entry - %w will convert
+everything within the parenthesis to strings, and Array(Range) will create a
+separate element for each element in the range.
+
+How did you determine what should be an instance variable versus a local
+variable?
+
+Basically, I decided if I would need access to a value in a different method
+within the class. If so, I made it an instance variable. Otherwise, I used a
+local variable.
+
+What do you feel is most improved in your refactored solution?
+
+I didn't change much in the refactoring. I changed a couple of things that didn't need to be instance variables back into local variables.
+
+=end
