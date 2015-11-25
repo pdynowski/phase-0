@@ -187,6 +187,7 @@ local variable.
 
 What do you feel is most improved in your refactored solution?
 
-I didn't change much in the refactoring. I changed a couple of things that didn't need to be instance variables back into local variables.
+I didn't change much in the refactoring. I changed a couple of things that
+didn't need to be instance variables back into local variables.
 
 =end
