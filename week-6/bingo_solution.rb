@@ -7,19 +7,35 @@
 # Outline:
 
 # Create a method to generate a letter ( b, i, n, g, o) and a number (1-100)
-  #fill in the outline here
+ # CREATE array containing letters b,i,n,g,o
+  # LOCATE this in initialize as instance variable
+ # GENERATE random number 0-5
+ # SELECT that cell of array as letter
+  # STORE cell # as instance variable
+ # GENERATE random number 1-100
+  # STORE number as instance variable
+ # CREATE string consisting of letter and number
+ # RETURN string
 
 # Check the called column for the number called.
-  #fill in the outline here
+  # RETRIEVE instance variable containing column index
+  # ITERATE over array, selecting subarrays
+    # CHECK indexed column in each subarray
+      # IF number == stored instance number
+        # CHANGE cell value to X
+        # BREAK iteration
 
 # If the number is in the column, replace with an 'x'
-  #fill in the outline here
+  # see above method/code
 
 # Display a column to the console
-  #fill in the outline here
+  # ACCEPT integer argument
+  # ITERATE over board array
+    # PRINT character in argument column with newline
 
 # Display the board to the console (prettily)
-  #fill in the outline here
+  # ITERATE over board array
+    # PRINT each subarray with newline
 
 # Initial Solution
 
