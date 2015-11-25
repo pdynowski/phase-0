@@ -42,15 +42,37 @@
 class BingoBoard
 
   def initialize(board)
+    @bingo_array = %w(B I N G O)
     @bingo_board = board
   end
 
+  def call
+    @column = Random.new.rand(5)
+    @number = Random.new.rand(100) + 1
+    puts "#{@bingo_array[@column]}#{@number}"
+  end
+
+  def display_column(col)
+    @bingo_board.each do |row|
+      p row[col]
+    end
+  end
+
+  def display_board
+    @bingo_board.each do |row|
+      p row
+    end
+  end
+
+  def check(col=@column, num=@number)
+    @bingo_board.each do |row|
+      row[col] = 'X' if row[col] == num
+    end
+  end
 
 end
 
 # Refactored Solution
-
-
 
 #DRIVER CODE (I.E. METHOD CALLS) GO BELOW THIS LINE
 board = [[47, 44, 71, 8, 88],
@@ -60,6 +82,10 @@ board = [[47, 44, 71, 8, 88],
         [75, 70, 54, 80, 83]]
 
 new_game = BingoBoard.new(board)
+new_game.display_board
+new_game.call
+new_game.check
+new_game.display_board
 
 
 #Reflection
