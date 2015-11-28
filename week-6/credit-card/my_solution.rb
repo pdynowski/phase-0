@@ -2,8 +2,8 @@
 # Class Warfare, Validate a Credit Card Number
 
 
-# I worked on this challenge [by myself, with: ].
-# I spent [#] hours on this challenge.
+# I worked on this challenge with Phil Thomas.
+# I spent [1] hours on this challenge.
 
 # Pseudocode
 
@@ -109,3 +109,25 @@ end
 
 # Reflection
 
+=begin
+
+What was the most difficult part of this challenge for you and your pair?
+
+The thing we had the most trouble with was figuring out how to double the odd-
+indexed values while converting all the digits back to integers from strings.
+
+What new methods did you find to help you when you refactored?
+
+We figured out the map!.with_index method to help us refactor our method that
+used .each_with_index.map - it allowed us to make the method destructive,
+instead of reassigning the values, and seems to be a little more logical to
+follow/easier to read and figure out what we're doing.
+
+
+What concepts or learnings were you able to solidify in this challenge?
+
+General methods for working with arrays. Specifically, new map methods and the
+reduce method. Also solidified good class/method form - we managed to refactor
+a lot of code into separate methods to make things more clear.
+
+=end
