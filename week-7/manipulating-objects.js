@@ -16,25 +16,62 @@ var terah = {
 // __________________________________________
 // Write your code below.
 
+adam = {
+  name: 'Adam',
+};
+
+terah = {
+  name: 'Terah',
+  spouse: adam,
+  weight: 125,
+};
+
+adam.spouse = terah;
+terah.children = {};
+
+carson = {
+  name: 'Carson',
+};
+
+terah.children.carson = carson;
+
+carter = {
+  name: 'Carter'
+};
+
+terah.children.carter = carter;
 
 
+terah.children['colton'] = {name: 'Colton'};
 
-
-
-
+adam.children = terah.children;
 
 
 
 
 // __________________________________________
 // Reflection: Use the reflection guidelines
-//
-//
-//
-//
-//
-//
+// What tests did you have trouble passing? What did you do to make
+// it pass? Why did that work?
 
+// I spent an unfortunate amount of time trying to "push" or "add" 
+// carter to the children object in terah. I was trying to apply 
+// Ruby methods to JavaScript problems; things worked much better 
+// when I just assigned the values directly into the object. That 
+// worked because it's the correct JS method to use for assignment.
+//
+// How difficult was it to add and delete properties outside of the 
+// object itself?
+//
+// Once I started using correct syntax, not hard at all.
+//
+// What did you learn about manipulating objects in this challenge?
+//
+// Using correct syntax is helpful. I tried to create the objects 
+// using both dot and bracket notation, and both creating the object
+//  prior to assignment and at the time of assignment. All of this 
+// seemed to work just fine; never had to delete anything, but I'm 
+// pretty sure I could.
 
 // __________________________________________
 // Driver Code:  Do not alter code below this line.
