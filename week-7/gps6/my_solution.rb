@@ -110,3 +110,50 @@ end
 
 #=======================================================================
 # Reflection Section
+
+=begin
+
+What are the differences between the two different hash syntaxes shown in the
+state_data file?
+
+The difference between the hash syntaxes is that the outer hash uses strings
+as keys while the inner hash uses symbols as keys. This has implications for
+both speed of access and memory usage - generally, the symbol method will take
+up less space in memory and allow for faster access. Strings are still
+appropriate for the outside hash, though - each state name string is going to
+be different anyway, so it's okay that each one will need its own space in
+memory. However, since each hash that is keyed by the state names uses the
+same values, it's much better to use symbols for the inner hash.
+
+What does require_relative do? How is it different from require?
+
+require_relative tells the Ruby compiler to go look for a file that is
+required for the operation of the current file/program, on a path that starts
+in the directory of the current file. It differs from require in that require
+needs an absolute path to the file that is needed (with the path beginning
+either at the home directory, or some user-defined environmental directory.)
+
+
+What are some ways to iterate through a hash?
+
+Well, there's what we used today, which is the ever-popular hash.each do |key,
+value| method. One could also choose to iterate only over the keys, or only
+over the values. Generally, anything else that one would say is iterating over
+the hash (eg: map, reduce, etc) is built on the each method, and so is really
+just another way of using each, anyway.
+
+When refactoring virus_effects, what stood out to you about the variables, if
+anything?
+
+For some reason, the initial author of the code decided they needed to pass
+instance variables into methods. This is...unnecessary, to say the least, as
+instance variables are, by definition, available to all the methods in the
+class.
+
+What concept did you most solidify in this challenge?
+
+Conceptually, the thing I most solidified was the range method for working
+with case statements - I had almost forgot that that was possible, and it
+really makes the code much shorter (and easier to read, in my opinion).
+
+=end
