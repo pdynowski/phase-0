@@ -20,11 +20,9 @@ adam = {
   name: 'Adam',
 };
 
-terah = {
-  name: 'Terah',
-  spouse: adam,
-  weight: 125,
-};
+terah.spouse = adam;
+terah.weight = 125;
+delete terah.eyeColor;
 
 adam.spouse = terah;
 terah.children = {};
