@@ -68,8 +68,7 @@ adam.children = terah.children;
 // Using correct syntax is helpful. I tried to create the objects 
 // using both dot and bracket notation, and both creating the object
 //  prior to assignment and at the time of assignment. All of this 
-// seemed to work just fine; never had to delete anything, but I'm 
-// pretty sure I could.
+// seemed to work just fine.
 
 // __________________________________________
 // Driver Code:  Do not alter code below this line.
