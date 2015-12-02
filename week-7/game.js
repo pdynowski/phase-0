@@ -152,9 +152,6 @@ var increasePopulation = function(nation, city) {
   }
 }
 
-
-// initialize(nation);
-
 // testing functions
 
 //test chooseProduction - all work
@@ -187,7 +184,10 @@ var increasePopulation = function(nation, city) {
 
 
 // basic loop. plays through game, adding population and cities when possible,
-// until second city is built.
+// until second city is built. uses everything but chooseProduction, which
+// really requires some user input.
+
+// initialize(nation);
 
 // while(nation.cities.length < 2){
 //   collectResources(nation);
