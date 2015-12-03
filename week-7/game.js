@@ -108,14 +108,15 @@ var nation = {
 // }
 
 //REFACTORED CHOOSEPRODUCTION FUNCTION
-var chooseProduction = function(pop, prod) {
+// plus, get some practice adding functions to a prototype
+Population.prototype.chooseProduction = function(prod) {
   console.log(prod);
-  for(var prop in pop.production) {
+  for(var prop in this.production) {
     console.log(prop);
-    if(prop === prod) pop.production[prop] = 1;
-    else pop.production[prop] = 0;
+    if(prop === prod) this.production[prop] = 1;
+    else this.production[prop] = 0;
   }
-  setOccupation(pop, prod);
+  setOccupation(this, prod);
 }
 
 //added new function in refactoring to separate functionality from
@@ -174,9 +175,6 @@ var buildCity = function(nation, name) {
 
 //REFACTORED COLLECTRESOURCES FUNCTION
 var collectResources = function(nation) {
-  var food = 0;
-  var materials = 0;
-  var gold = 0;
   nation.cities.forEach(function(city) {
     for(var prop in nation.goods){
       nation.goods[prop] += city.production[prop];
@@ -215,14 +213,14 @@ var increasePopulation = function(nation, city) {
 
 // testing functions
 
-//test chooseProduction - all work
+// //test chooseProduction - all work
 // pop = new Population();
 // console.log(pop);
-// chooseProduction(pop, "materials");
+// pop.chooseProduction("materials");
 // console.log(pop);
-// chooseProduction(pop, "gold");
+// pop.chooseProduction("gold");
 // console.log(pop);
-// chooseProduction(pop, "food");
+// pop.chooseProduction("food");
 // console.log(pop);
 
 //test buildCity - works as expected - tests for number of goods  should
@@ -249,16 +247,16 @@ var increasePopulation = function(nation, city) {
 // until second city is built. uses everything but chooseProduction, which
 // really requires some user input.
 
-// initialize(nation);
+initialize(nation);
 
-// while(nation.cities.length < 2){
-//   collectResources(nation);
-//   increasePopulation(nation, nation.cities[0]);
-//   if(nation.goods.gold >= build_requirements.city.gold && nation.goods.materials >= build_requirements.city.materials && nation.goods.food >= build_requirements.city.food) {
-//     buildCity(nation, "Second City");
-//   }
-//   console.log(nation);
-// }
+while(nation.cities.length < 2){
+  collectResources(nation);
+  increasePopulation(nation, nation.cities[0]);
+  if(nation.goods.gold >= build_requirements.city.gold && nation.goods.materials >= build_requirements.city.materials && nation.goods.food >= build_requirements.city.food) {
+    buildCity(nation, "Second City");
+  }
+  console.log(nation);
+}
 
 // Refactored Code
 // REFACTORED CODE IS WITHIN THE CODE ABOVE
@@ -271,19 +269,25 @@ var increasePopulation = function(nation, city) {
 //
 // What was the most difficult part of this challenge?
 
+// Honestly, the most difficult part of the challenge for me was deciding what
+// to program. Code is...straightforward. Creativity is not.
 
 // What did you learn about creating objects and functions that interact with
 // one another?
 
+// Mostly, that you've got to be very careful/specific to make sure that the
+// actions you think you're taking line up with the actions you should be
+// taking, and that you're taking them on the right things.
 
 // Did you learn about any new built-in methods you could use in your
 // refactored solution? If so, what were they and how do they work?
 
+// There didn't seem to be a lot of good built-in methods - the for (var prop
+// in object) iterator was pretty useful, though.
 
 // How can you access and manipulate properties of objects?
-//
-//
-//
-//
-//
-//
+
+// There are two main methods - dot and bracket. You can get or set properties
+// using object.property OR object[property]. They're generally equivalent,
+// but the bracket method is useful for iterating over collections of
+// properties.
