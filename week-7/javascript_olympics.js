@@ -90,4 +90,22 @@ function Athlete(name, age, sport, quote){
 
 // Reflection
 
+// What JavaScript knowledge did you solidify in this challenge?
 
+// Well, basic syntax, for one. I find myself just stuck enough in Ruby coding
+// patterns that little things are constantly missing in JS - return statements,
+// for instance - I've been relying on Ruby's automatic return of the last
+// evaluated statement, and it's causing problems in JS.
+
+// What are constructor functions?
+
+// Constructor functions are functions in JS that define how an object will be
+// created. They're quite similar to classes in Ruby.
+
+// How are constructors different from Ruby classes (in your research)?
+
+// 1. Constructors are only responsible for creating new instances in JS -
+// behavior is defined in something called a prototype. In Ruby, both behavior
+// and definition occur in the class. Also, there are no formal classes in JS
+// - any function can technically be used as a constructor, while an actual
+// class definition is needed to construct a class in Ruby.
