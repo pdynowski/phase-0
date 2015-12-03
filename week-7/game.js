@@ -44,7 +44,8 @@ function Population() {
     food: 1,
     materials: 0,
     gold: 0
-  }
+  };
+  this.occupation = "Farmer"
 }
 
 //Object definition for city
@@ -74,63 +75,121 @@ var build_requirements = {
 
 //Base nation object - stored goods, list of cities
 var nation = {
-  food: 0,
-  gold: 0,
-  materials: 0,
+  goods: {
+    food: 0,
+    gold: 0,
+    materials: 0
+  },
   cities: []
 };
 
 // Provides a method for changing a pop's production bonus.
-var chooseProduction = function(pop, prod) {
+// var chooseProduction = function(pop, prod) {
+//   switch(prod) {
+//     case "food":
+//       pop.production.food = 1;
+//       pop.production.materials = 0;
+//       pop.production.gold = 0;
+//       pop.occupation = "Farmer";
+//       break;
+//     case "materials":
+//       pop.production.food = 0;
+//       pop.production.materials = 1;
+//       pop.production.gold = 0;
+//       pop.occupation = "Miner";
+//       break;
+//     case "gold":
+//       pop.production.food = 0;
+//       pop.production.materials = 0;
+//       pop.production.gold = 1;
+//       pop.occupation = "Gold Miner";
+//       break;
+//   }
+// }
+
+//REFACTORED CHOOSEPRODUCTION FUNCTION
+// plus, get some practice adding functions to a prototype
+Population.prototype.chooseProduction = function(prod) {
+  console.log(prod);
+  for(var prop in this.production) {
+    console.log(prop);
+    if(prop === prod) this.production[prop] = 1;
+    else this.production[prop] = 0;
+  }
+  setOccupation(this, prod);
+}
+
+//added new function in refactoring to separate functionality from
+//chooseProduction
+
+var setOccupation = function(pop, prod) {
   switch(prod) {
     case "food":
-      pop.production.food = 1;
-      pop.production.materials = 0;
-      pop.production.gold = 0;
+      pop.occupation = "Farmer";
       break;
     case "materials":
-      pop.production.food = 0;
-      pop.production.materials = 1;
-      pop.production.gold = 0;
+      pop.occupation = "Miner";
       break;
     case "gold":
-      pop.production.food = 0;
-      pop.production.materials = 0;
-      pop.production.gold = 1;
+      pop.occupation = "Gold Miner";
       break;
   }
 }
-
 // Create a new city and add it to the nation list
+// var buildCity = function(nation, name) {
+//   var city = new City(name);
+//   nation.cities.push(city);
+//   nation.goods.food -= build_requirements.city.food;
+//   nation.goods.materials -= build_requirements.city.materials;
+//   nation.goods.gold -= build_requirements.city.gold;
+// }
+
+// REFACTOR BUILDCITY
 var buildCity = function(nation, name) {
   var city = new City(name);
   nation.cities.push(city);
-  nation.food -= build_requirements.city.food;
-  nation.materials -= build_requirements.city.materials;
-  nation.gold -= build_requirements.city.gold;
+  for(var prop in build_requirements.city){
+    nation.goods[prop] -= build_requirements.city[prop];
+  }
 }
 
 // Gather and store produced resources based on cities and population
+// var collectResources = function(nation) {
+//   var food = 0;
+//   var materials = 0;
+//   var gold = 0;
+//   nation.cities.forEach(function(city) {
+//     food += city.production.food;
+//     materials += city.production.materials;
+//     gold += city.production.gold;
+//     city.population.forEach(function(pop) {
+//       (food += pop.production.food);
+//       (materials += pop.production.materials);
+//       (gold += pop.production.gold);
+//     })
+//   })
+//   nation.gold += gold;
+//   nation.food += food;
+//   nation.materials += materials;
+// }
+
+//REFACTORED COLLECTRESOURCES FUNCTION
 var collectResources = function(nation) {
-  var food = 0;
-  var materials = 0;
-  var gold = 0;
   nation.cities.forEach(function(city) {
-    food += city.production.food;
-    materials += city.production.materials;
-    gold += city.production.gold;
+    for(var prop in nation.goods){
+      nation.goods[prop] += city.production[prop];
+    }
     city.population.forEach(function(pop) {
-      (food += pop.production.food);
-      (materials += pop.production.materials);
-      (gold += pop.production.gold);
+      for(var prop in nation.goods){
+        nation.goods[prop] += pop.production[prop];
+      }
     })
   })
-  nation.gold += gold;
-  nation.food += food;
-  nation.materials += materials;
 }
 
 // initialize function - create first city and population
+// chose not to refactor goods settings into loop to leave possibility of
+// setting them individually open
 var initialize = function(nation) {
   var first_city = new City("Capital");
   first_city.maxPop = 10;
@@ -144,9 +203,9 @@ var initialize = function(nation) {
 // population
 var increasePopulation = function(nation, city) {
   if(city.population.length < city.maxPop) {
-    if(nation.food >= build_requirements.population.food) {
+    if(nation.goods.food >= build_requirements.population.food) {
       city.population.push(new Population());
-      nation.food -= build_requirements.population.food;
+      nation.goods.food -= build_requirements.population.food;
       city.pop++;
     }
   }
@@ -154,14 +213,14 @@ var increasePopulation = function(nation, city) {
 
 // testing functions
 
-//test chooseProduction - all work
+// //test chooseProduction - all work
 // pop = new Population();
 // console.log(pop);
-// chooseProduction(pop, "materials");
+// pop.chooseProduction("materials");
 // console.log(pop);
-// chooseProduction(pop, "gold");
+// pop.chooseProduction("gold");
 // console.log(pop);
-// chooseProduction(pop, "food");
+// pop.chooseProduction("food");
 // console.log(pop);
 
 //test buildCity - works as expected - tests for number of goods  should
@@ -177,40 +236,58 @@ var increasePopulation = function(nation, city) {
 // console.log(nation);
 
 // // test increasePopulation - works
+// initialize(nation);
 // nation.food = 10;
 // console.log(nation);
 // increasePopulation(nation, nation.cities[0]);
-// console.log(nation);
+// console.log(nation.cities[0].population);
 
 
 // basic loop. plays through game, adding population and cities when possible,
 // until second city is built. uses everything but chooseProduction, which
 // really requires some user input.
 
-// initialize(nation);
+initialize(nation);
 
-// while(nation.cities.length < 2){
-//   collectResources(nation);
-//   increasePopulation(nation, nation.cities[0]);
-//   if(nation.gold >= build_requirements.city.gold && nation.materials >= build_requirements.city.materials && nation.food >= build_requirements.city.food) {
-//     buildCity(nation, "Second City");
-//   }
-//   console.log(nation);
-// }
+while(nation.cities.length < 2){
+  collectResources(nation);
+  increasePopulation(nation, nation.cities[0]);
+  if(nation.goods.gold >= build_requirements.city.gold && nation.goods.materials >= build_requirements.city.materials && nation.goods.food >= build_requirements.city.food) {
+    buildCity(nation, "Second City");
+  }
+  console.log(nation);
+}
 
 // Refactored Code
-
-
-
-
-
+// REFACTORED CODE IS WITHIN THE CODE ABOVE
+// FUNCTIONS THAT GOT REFACTORED:
+//  chooseProduction
+//  buildCity
+//  collectResources
 
 // Reflection
 //
-//
-//
-//
-//
-//
-//
-//
+// What was the most difficult part of this challenge?
+
+// Honestly, the most difficult part of the challenge for me was deciding what
+// to program. Code is...straightforward. Creativity is not.
+
+// What did you learn about creating objects and functions that interact with
+// one another?
+
+// Mostly, that you've got to be very careful/specific to make sure that the
+// actions you think you're taking line up with the actions you should be
+// taking, and that you're taking them on the right things.
+
+// Did you learn about any new built-in methods you could use in your
+// refactored solution? If so, what were they and how do they work?
+
+// There didn't seem to be a lot of good built-in methods - the for (var prop
+// in object) iterator was pretty useful, though.
+
+// How can you access and manipulate properties of objects?
+
+// There are two main methods - dot and bracket. You can get or set properties
+// using object.property OR object[property]. They're generally equivalent,
+// but the bracket method is useful for iterating over collections of
+// properties.
