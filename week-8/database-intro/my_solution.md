@@ -4,7 +4,8 @@
 4) SELECT state_name, population FROM states ORDER BY population DESC;
 5) SELECT state_name FROM states where region_id = 7;
 6) SELECT state_name, population_density FROM states WHERE population_density
-> 50 ORDER BY population_density ASC;
+ > 50 ORDER BY population_density ASC;
+ 
 7) SELECT state_name FROM states WHERE population > 1000000 AND population  < 1500000;
 8) SELECT state_name, region_id FROM states ORDER BY region_id;
 9) SELECT region_name FROM regions WHERE region_name LIKE "%Central%";
@@ -47,10 +48,10 @@ guidelines for that?
 
 >You can select information from an SQL database by using the "SELECT info
 FROM database" command, modified by many, many things. "info" can either be a
-specific column or columns from the database, or pne can return all with the
-* operator. Results can also be filtered using the WHERE command and defining
-conditions for the entries to meet to be included (eg, a year prior to 1999;
-a name that CONTAINS a certain string of letters, etc). The data can also be
+specific column or columns from the database, a general search for all
+columns. Results can also be filtered using the WHERE command and defining
+conditions for the entries to meet to be included (eg, a year prior to 1999; a
+name that CONTAINS a certain string of letters, etc). The data can also be
 sorted using the ORDER BY command. A general guideline, I guess, would be to
 make the filter as specific as possible.
 
