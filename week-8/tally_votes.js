@@ -63,26 +63,72 @@ var officers = {
 }
 
 // Pseudocode
-
+// Iterate through votes
+// Iterate through each object inside of each key.
+// Add name (if it doesn't already exist) and a tally to votecount
+// if name already exists, just increase the tally
+// Iterate through the votecount object
+// Sort the object, highest to lowest, and take the first key and assign it to the corresponding value in officers.
 
 // __________________________________________
 // Initial Solution
 
+// for(var voter in votes) {
+//   var cast_votes = votes[voter];
+//   for(var officer in cast_votes) {
+//     var voted_for = cast_votes[officer];
+//     if(typeof voteCount[officer][voted_for] === 'undefined') {
+//       voteCount[officer][voted_for] = 0;
+//     }
+//     voteCount[officer][voted_for]++;
 
+//   }
 
+// }
 
-
-
-
+// for(var office in voteCount) {
+//   var votes = voteCount[office];
+//   var winner = "";
+//   var winning_ballots = 0;
+//   for(var candidate in votes) {
+//     var ballots = votes[candidate];
+//     if (ballots > winning_ballots) {
+//       winning_ballots = ballots;
+//       winner = candidate;
+//     }
+//   }
+//   officers[office] = winner;
+// }
 // __________________________________________
 // Refactored Solution
 
+for(var voter in votes) {
+  var ballot = votes[voter];
+  for(var title in ballot) {
+    var candidate = ballot[title];
+    if(typeof voteCount[title][candidate] === 'undefined') {
+      voteCount[title][candidate] = 0;
+    }
+    voteCount[title][candidate]++;
+  }
+}
+
+for(var office in voteCount) {
+  var votes = voteCount[office];
+  var winner = "";
+  var winning_ballots = 0;
+  for(var candidate in votes) {
+    var ballots = votes[candidate];
+    if (ballots > winning_ballots) {
+      winning_ballots = ballots;
+      winner = candidate;
+    }
+  }
+  officers[office] = winner;
+}
 
 
 
-
-
-// __________________________________________
 // Reflection
 
 
