@@ -1,7 +1,7 @@
 // Tally Votes in JavaScript Pairing Challenge.
 
-// I worked on this challenge with:
-// This challenge took me [#] hours.
+// I worked on this challenge with: Coleby Kent
+// This challenge took me [1] hours.
 
 // These are the votes cast by each student. Do not alter these objects here.
 var votes = {
@@ -131,11 +131,31 @@ for(var office in voteCount) {
 
 // Reflection
 
+/*
+What did you learn about iterating over nested objects in JavaScript?
+
+Mostly, we found that it was sometimes tricky to make sure we were retrieving
+and working with the correct object. We left a lot of declared variables in,
+even after refactoring, because we though that it helped make the code
+clearer.
+
+Were you able to find useful methods to help you with this?
+
+Our code was fairly simple to begin with, and a lot of the built-in javascript
+methods seem to work with arrays rather than objects, so we didn't use much in
+the way of built-in methods. We were trying to get the conditional assignment
+operator to work (for the initial ballot counting), but we couldn't figure it
+out - plus, it seemed like it was making the code less readable, so we left
+the actual check for undefined in the code.
+
+What concepts were solidified in the process of working through this challenge?
+
+Generally working with javascript - it always takes a little while to get back
+into the javascript mindset when you've been working with Ruby. Eventually, I
+imagine the switch will be easier.
 
 
-
-
-
+*/
 // __________________________________________
 // Test Code:  Do not alter code below this line.
 
