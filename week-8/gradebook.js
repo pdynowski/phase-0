@@ -22,20 +22,53 @@ var scores = [ [80, 70, 70, 100],
 
 // __________________________________________
 // Write your code below.
+// var gradebook = {}
+
+// var index = 0;
+// for(var student in students) {
+//   gradebook[students[student]] = {testScores: scores[index]};
+//   index++;
+// }
+
+ 
+
+// gradebook.addScore = function(name, score) {
+//   gradebook[name].testScores.push(score);
+// }
+
+// gradebook.getAverage = function(name, scores) {
+//   return average(gradebook[name].testScores);
+// }
 
 
-
-
-
-
+// var average = function(scores){
+//   var total = 0;
+//   for(var score in scores){
+//     total += scores[score];
+//   }
+//   return total/scores.length;
+// } 
 
 
 // __________________________________________
 // Refactored Solution
-
-
-
-
+var gradebook = {}
+var index = 0;
+for(var student in students) {
+  gradebook[students[student]] = {testScores: scores[index]};
+  index++;
+}
+gradebook.addScore = function(name, score) {
+  gradebook[name].testScores.push(score);
+}
+gradebook.getAverage = function(name) {
+  return average(gradebook[name].testScores);
+}
+var average = function(scores) {
+  return(scores.reduce(function(sum, score) {
+    return sum + score;
+  }))/scores.length;
+}
 
 
 
