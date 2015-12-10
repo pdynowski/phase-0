@@ -53,17 +53,19 @@ var scores = [ [80, 70, 70, 100],
 // __________________________________________
 // Refactored Solution
 var gradebook = {}
-var index = 0;
-for(var student in students) {
-  gradebook[students[student]] = {testScores: scores[index]};
-  index++;
-}
+
+students.forEach(function(student, index) {
+  gradebook[student] = {testScores: scores[index]};
+})
+
 gradebook.addScore = function(name, score) {
   gradebook[name].testScores.push(score);
 }
+
 gradebook.getAverage = function(name) {
   return average(gradebook[name].testScores);
 }
+
 var average = function(scores) {
   return(scores.reduce(function(sum, score) {
     return sum + score;
@@ -76,6 +78,20 @@ var average = function(scores) {
 // __________________________________________
 // Reflect
 
+/*
+
+What did you learn about adding functions to objects?
+
+Mostly, confirmed that it can be done in exactly the same manner as adding a
+property to an object in JS. The method we used added a single method to a
+single object - if there had been many gradebook objects, only the one we
+specifically added the method to would have had it. Alternately, if we had a
+gradebook prototype, we could add the methods to ALL instances of gradebook by
+adding the method to the prototype instead.
+
+How did you iterate over nested arrays in JavaScript?
+
+We used the 'for...in' construction to iterate over the array in JS. It wasn't necessary for us to iterate over the inner array of the scores array. Alternately, we could have used "forEach"
 
 
 
@@ -83,6 +99,8 @@ var average = function(scores) {
 
 
 
+
+*/
 
 // __________________________________________
 // Test Code:  Do not alter code below this line.
