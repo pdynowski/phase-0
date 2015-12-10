@@ -91,14 +91,17 @@ adding the method to the prototype instead.
 
 How did you iterate over nested arrays in JavaScript?
 
-We used the 'for...in' construction to iterate over the array in JS. It wasn't necessary for us to iterate over the inner array of the scores array. Alternately, we could have used "forEach"
+We initially used the 'for...in' construction to iterate over the array in JS.
+It wasn't necessary for us to iterate over the inner array of the scores
+array. On refactoring, we used the "forEach" construction, which allowed us to
+remove an index variable and iterator that we had needed to use originally.
 
+Were there any new methods you were able to incorporate? If so, what were they
+and how did they work?
 
-
-
-
-
-
+forEach was the only new method I used this time - it iterates over an array,
+providing the current value, the current index, and the array object itself,
+and running a defined function at each iteration.
 
 */
 
