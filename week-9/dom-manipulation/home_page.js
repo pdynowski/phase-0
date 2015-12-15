@@ -44,3 +44,15 @@ for(var item in changes) {
 
 var tmpl = document.getElementById('hidden');
 document.body.appendChild(tmpl.content);
+
+// Reflection
+
+/* What did you learn about the DOM?
+
+Class and ID tags make manipulating the DOM much simpler.
+
+What are some useful methods to use to manipulate the DOM?
+
+getElementById, getElementsByClassName, and getElementsByTagName are all
+useful methods to select particular bits of the DOM, and innerHTML and various
+style subcalls are most useful for changing the data in those bits.
