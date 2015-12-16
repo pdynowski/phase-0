@@ -250,3 +250,8 @@ p roadster.total_distance
 
 
 # 5. Reflection
+
+# This assignment's reflection is over in the other file.
+
+# For this particular challenge, though, we reviewed some of the Class
+# concepts in Ruby.
