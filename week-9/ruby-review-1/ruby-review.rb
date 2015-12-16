@@ -103,23 +103,19 @@ end
 def dr_evils_cipher(coded_message)
 
   input = coded_message.downcase.split("")
-  decoded_sentence = []
   shift = 4
   cipher = get_code_hash(shift)
 
-  input.each do |code_letter|
-    found_match = false
+  decoded_sentence = input.reduce([]) do |last, code_letter|
     case code_letter
     when 'a'..'z' then
-      decoded_sentence << cipher[code_letter]
+      last << cipher[code_letter]
     when /[@#$%^&*\n]/ then
-      decoded_sentence << " "
+      last << " "
     else
-      decoded_sentence << code_letter
+      last << code_letter
     end
-  end
-   
-decoded_sentence = decoded_sentence.join("")
+  end.join("")
 end
 
 # Driver Test Code:
@@ -134,3 +130,19 @@ p dr_evils_cipher("alc@qeoi*e$xvmppmsr^alir#ai*gsyph%qeoi...#fmppmsrw?") == "why
 
 # Reflection
 # Keep your reflection limited to 10-15 minutes!
+
+# What concepts did you review in this challenge?
+
+# I got to play with constructing arrays from ranges, hashes from arrays, and
+# with case statements. Also some fun string operations.
+
+# What is still confusing to you about Ruby?
+
+# I think I have a fairly solid grasp of it at this point - at least, the
+# surface stuff.
+
+# What are you going to study to get more prepared for Phase 1?
+
+# I'm going to play with creating and using enumerators (not just enumerable
+# methods) some more - it came in very handy when creating the cipher key in
+# this challenge, and it's not something I'd worked with before.
